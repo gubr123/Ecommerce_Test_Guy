@@ -1,0 +1,106 @@
+.formLabel {
+    width: 100px;
+    display: inline-flex;
+}
+
+.inputDiv {
+    padding: 5px;
+}
+
+.inputStyle {
+    border-radius: 4px;
+}
+
+.myButton {
+    -moz-box-shadow: 0px 10px 14px -7px #276873;
+    -webkit-box-shadow: 0px 10px 14px -7px #276873;
+    box-shadow: 0px 10px 14px -7px #276873;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #599bb3), color-stop(1, #408c99));
+    background: -moz-linear-gradient(top, #599bb3 5%, #408c99 100%);
+    background: -webkit-linear-gradient(top, #599bb3 5%, #408c99 100%);
+    background: -o-linear-gradient(top, #599bb3 5%, #408c99 100%);
+    background: -ms-linear-gradient(top, #599bb3 5%, #408c99 100%);
+    background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#599bb3', endColorstr='#408c99', GradientType=0);
+    background-color: #599bb3;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 3px 10px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #3d768a;
+    margin-left: 235px;
+}
+
+.myButton:hover {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #408c99), color-stop(1, #599bb3));
+    background: -moz-linear-gradient(top, #408c99 5%, #599bb3 100%);
+    background: -webkit-linear-gradient(top, #408c99 5%, #599bb3 100%);
+    background: -o-linear-gradient(top, #408c99 5%, #599bb3 100%);
+    background: -ms-linear-gradient(top, #408c99 5%, #599bb3 100%);
+    background: linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#408c99', endColorstr='#599bb3', GradientType=0);
+    background-color: #408c99;
+}
+
+.myButton:active {
+    position: relative;
+    top: 1px;
+}
+
+table.records{
+    border-collapse: collapse;
+    width: 700px;
+}
+
+table.records {
+    border: 1px solid black;
+}
+
+.tableCell {
+    border: 1px solid black;
+    padding: 5px;
+    text-align: left;
+}
+
+.fa.fa-home.homeStyle {
+    text-align: center;
+    font-size: 150px;
+    width: 100%
+}
+
+fieldset.paymentFieldSetClass {
+    margin: auto !important;
+    border: 1px solid !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    border-radius: 4px;
+}
+
+fieldset.backOfficeFieldSetClass  {
+    margin-left: 20px !important;
+    border: 1px solid !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    border-radius: 4px;
+}
+
+legend.fieldSetClass {
+    font-weight: bold !important;
+    width: auto;
+    padding: 0 10px;
+    border-bottom: none;
+}
+
+.results {
+    margin-top: 15px;
+    margin-left:20px;
+}
+
+i {
+    cursor: pointer;
+}

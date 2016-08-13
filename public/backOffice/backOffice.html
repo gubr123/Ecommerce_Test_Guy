@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/public/style/main.css" rel="stylesheet">
+    <script src="/public/bundle.js"></script>
+
+</head>
+<body ng-controller="backOfficeController" ng-init="init()">
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Ecommerce App</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="../payment/payment.html">Payment</a></li>
+            <li class="active"><a href="../backOffice/backOffice.html">BackOffice</a></li>
+        </ul>
+    </div>
+</nav>
+<div>
+    <div>
+        <fieldset class="backOfficeFieldSetClass col-sm-8" style="width:750px">
+            <legend class="fieldSetClass">Purchases :</legend>
+            <table class="records" style="margin-left: auto">
+                <tr>
+                    <th class="tableCell" ng-click="predicate = 'firstName'; reverse = !reverse">
+                        First Name
+                        <i ng-class="predicate == 'firstName' && reverse ? 'fa fa-caret-up' : 'fa fa-caret-down'"></i>
+                    </th>
+                    <th class="tableCell" ng-click="predicate = 'lastName'; reverse = !reverse">
+                        Last Name
+                        <i ng-class="predicate == 'lastName' && reverse ? 'fa fa-caret-up' : 'fa fa-caret-down'"></i>
+                    </th>
+                    <th class="tableCell" ng-click="predicate = 'email'; reverse = !reverse">
+                        Email
+                        <i ng-class="predicate == 'email' && reverse ? 'fa fa-caret-up' : 'fa fa-caret-down'"></i>
+                    </th>
+                    <th class="tableCell" ng-click="predicate = 'country'; reverse = !reverse">
+                        Country
+                        <i ng-class="predicate == 'country' && reverse ? 'fa fa-caret-up' : 'fa fa-caret-down'"></i>
+                    </th>
+                    <th class="tableCell" ng-click="predicate = 'paid'; reverse = !reverse">
+                        Completed purchase
+                        <i ng-class="predicate == 'paid' && reverse ? 'fa fa-caret-up' : 'fa fa-caret-down'"></i>
+                    </th>
+                    <th class="tableCell" ng-click="predicate = 'dateTime'; reverse = !reverse">
+                        Date
+                        <i ng-class="predicate == 'dateTime' && reverse ? 'fa fa-caret-up' : 'fa fa-caret-down'"></i>
+                    </th>
+                </tr>
+                <tr ng-if="usersList.length == 0" class="userForm">
+                    <td colspan="6">The backOffice list is empty</td>
+                </tr>
+                <tr class="userForm" ng-repeat="user in usersList | orderBy:predicate:reverse">
+                    <td class="tableCell">
+                        {{user.firstName}}
+                    </td>
+                    <td class="tableCell">
+                        {{user.lastName}}
+                    </td>
+                    <td class="tableCell">
+                        {{user.email}}
+                    </td>
+                    <td class="tableCell">
+                        {{user.country}}
+                    </td>
+                    <td class="tableCell" style="font-weight: bold"
+                        ng-style="user.paid === 'Yes' ? {'color': 'green'} : {'color': 'red'}">
+                        {{user.paid}}
+                    </td>
+                    <td class="tableCell">
+                        {{user.dateTime}}
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </div>
+    <div>
+        <fieldset class="backOfficeFieldSetClass col-sm-2" style="width:220px">
+            <legend class="fieldSetClass">Total :</legend>
+            <table class="records" style="margin-left: auto; width:180px">
+                <tr style="border: 1px solid">
+                    <td>
+                        Total Purchases
+                    </td>
+                    <td>
+                        {{totalPurchases}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Total Sum
+                    </td>
+                    <td>
+                        {{totalSum}} $
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </div>
+</div>
+</body>
+</html>
